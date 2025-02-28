@@ -9,11 +9,18 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - 1.qmd
+  sidebar: 
+    style: "docked"
+    search: true
+    contents:
+      - test: "含参变量积分"
+        href: 1.qmd
 
 format:
   html:
     theme:
-      - cosmo
+      - solar
       - brand
     css: styles.css
     toc: true

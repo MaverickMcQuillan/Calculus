@@ -1,0 +1,26 @@
+# 一致收敛积分的分析性质
+
+现在讨论含参变量反常积分的分析性质，即连续性、可微性和可导性。
+
+设反常积分 $\displaystyle \int_{a}^{+\infty} f(x,y) \, dx$ 对于每个 $\displaystyle y \in [c,d]$ 都收敛，这样就定义了函数
+$$
+I(y) = \int_{a}^{+\infty} f(x,y) \, dx,   y \in [c,d]
+$$
+
+任取一列严格单调增加的数列 $\displaystyle {a_n}$ , 它满足 $\displaystyle a_0 = a$ 以及 $\displaystyle a_n \to +\infty(n \to \infty)$.置
+$$
+u_n(y) = \int_{a_{n-1}}^{a_n}f(x,y) \, dx, n=1,2,...
+$$
+
+那么
+$$
+\int_{a}^{+\infty}f(x,y) \, dx = \sum_{n=1}^{\infty}\int_{a_{n-1}}^{a_n}f(x,y) \, dx = \sum_{n=1}^{\infty} u_n(y).
+$$
+
+在以下引理的叙述和定理的证明中我们仍采用上面的记号。
+
+利用 Cauchy 收敛原理容易证明如下的引理：
+
+::: {#lem-Cauchy}
+
+若含参变量反常积分 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛，则函数项级数 $\displaystyle \sum_{n=1}^{\infty} u_n{y}$ 在 $\displaystyle [c,d]$ 上一致收敛。

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Calculus</title>
+<title>quarto-inputff7f31f86dc012e8 – Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -93,11 +122,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./1.html"> 
+    <a class="nav-link active" href="./1.html" aria-current="page"> 
 <span class="menu-text">一致收敛积分的分析性质</span></a>
   </li>  
 </ul>
@@ -111,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.html">一致收敛积分的分析性质</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.html" class="sidebar-item-text sidebar-link">
+  <a href="./1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">一致收敛积分的分析性质</span></a>
   </div>
 </li>
@@ -142,34 +171,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#一致收敛积分的分析性质" id="toc-一致收敛积分的分析性质" class="nav-link active" data-scroll-target="#一致收敛积分的分析性质">一致收敛积分的分析性质</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
+
+
+
+<section id="一致收敛积分的分析性质" class="level1">
+<h1>一致收敛积分的分析性质</h1>
+<p>现在讨论含参变量反常积分的分析性质，即连续性、可微性和可导性。</p>
+<p>设反常积分 <span class="math inline">\(\displaystyle \int_{a}^{+\infty} f(x,y) \, dx\)</span> 对于每个 <span class="math inline">\(\displaystyle y \in [c,d]\)</span> 都收敛，这样就定义了函数 <span class="math display">\[
+I(y) = \int_{a}^{+\infty} f(x,y) \, dx,   y \in [c,d]
+\]</span></p>
+<p>任取一列严格单调增加的数列 <span class="math inline">\(\displaystyle {a_n}\)</span> , 它满足 <span class="math inline">\(\displaystyle a_0 = a\)</span> 以及 <span class="math inline">\(\displaystyle a_n \to +\infty(n \to \infty)\)</span>.置 <span class="math display">\[
+u_n(y) = \int_{a_{n-1}}^{a_n}f(x,y) \, dx, n=1,2,...
+\]</span></p>
+<p>那么 <span class="math display">\[
+\int_{a}^{+\infty}f(x,y) \, dx = \sum_{n=1}^{\infty}\int_{a_{n-1}}^{a_n}f(x,y) \, dx = \sum_{n=1}^{\infty} u_n(y).
+\]</span></p>
+<p>在以下引理的叙述和定理的证明中我们仍采用上面的记号。</p>
+<p>利用 Cauchy 收敛原理容易证明如下的引理：</p>
+<div id="lem-Cauchy" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1</strong></span> 若含参变量反常积分 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y) \, dx\)</span> 关于 <span class="math inline">\(\displaystyle y\)</span> 在 <span class="math inline">\(\displaystyle [c,d]\)</span> 上一致收敛，则函数项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^{\infty} u_n{y}\)</span> 在 <span class="math inline">\(\displaystyle [c,d]\)</span> 上一致收敛。</p>
+
+
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>About this site</p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
