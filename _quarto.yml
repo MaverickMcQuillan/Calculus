@@ -20,7 +20,7 @@ website:
 format:
   html:
     theme:
-      - solar
+      - Minty
       - brand
     css: styles.css
     toc: true

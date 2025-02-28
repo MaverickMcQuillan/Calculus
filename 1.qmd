@@ -23,4 +23,6 @@ $$
 
 ::: {#lem-Cauchy}
 
-若含参变量反常积分 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛，则函数项级数 $\displaystyle \sum_{n=1}^{\infty} u_n{y}$ 在 $\displaystyle [c,d]$ 上一致收敛。
+若含参变量反常积分 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛，则函数项级数 $\displaystyle \sum_{n=1}^{\infty} u_n(y)$ 在 $\displaystyle [c,d]$ 上一致收敛。
+
+:::
