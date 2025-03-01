@@ -26,3 +26,27 @@ $$
 若含参变量反常积分 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛，则函数项级数 $\displaystyle \sum_{n=1}^{\infty} u_n(y)$ 在 $\displaystyle [c,d]$ 上一致收敛。
 
 :::
+
+::: {#thm-consistent}
+
+## 连续性定理
+设 $\displaystyle f(x,y)$ 在 $\displaystyle [a,+\infty) \times [c,d]$ 上连续， $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛，则函数
+
+$$
+I(y) = \int_{a}^{+\infty}f(x,y)\, dx
+$$
+
+在 $\displaystyle [c,d]$ 上连续，即
+
+$$
+\lim_{y \to y_0} \int_{a}^{+\infty}f(x,y)dx = \int_{a}^{+\infty}\lim_{y \to y_0}f(x,y) \, dx, \qquad  y_0 \in [c,d]
+$$
+
+也就是说，极限运算与积分运算可以交换。
+
+:::
+
+::: {.proof}
+## @thm-consistent[连续性定理]
+因为 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 在 $\displaystyle [c,d]$ 上一致收敛，那么由 @lem-Cauchy 知
+:::
