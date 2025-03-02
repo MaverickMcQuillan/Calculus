@@ -48,5 +48,24 @@ $$
 
 ::: {.proof}
 ## @thm-consistent[连续性定理]
-因为 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 在 $\displaystyle [c,d]$ 上一致收敛，那么由 @lem-Cauchy 知
+因为 $\displaystyle \int_{a}^{+\infty}f(x,y) \, dx$ 在 $\displaystyle [c,d]$ 上一致收敛，那么由 @lem-Cauchy 知 $\displaystyle \sum_{n=1}^{\infty} u_n(y)$ 在 $\displaystyle [c,d]$
+上一致收敛。由于 $\displaystyle f(x,y)$ 在 $\displaystyle [a_{n-1},a_{n}] \times [c,d]$ 上连续，
+那么由常义含参变量积分的连续性定理知
+
+$$
+u_{n}(y)=\int_{a_{n-1}}^{a_{n}}f(x,y)\,dx
+$$
+
+连续 $\displaystyle (n=1,2,...)$. 根据一致连续收敛级数的性质就知道和函数
+
+$$
+I(y) = \int_{a}^{+\infty} f(x,y)dx = \sum_{n=1}^{\infty}u_{n}(y)
+$$
+
+连续。
+
 :::
+
+注意，Dini定理并不是这个定理的逆定理。Dini 定理只说明了在 $\displaystyle f(x,y)$ 保持定号
+的情况下，由 $\displaystyle I(y)=\int_{a}^{+\infty}f(x,y)\,dx$ 的连续性可以推出 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$
+的一致收敛性。读者可以举例说明：去掉“保持定号”条件可能导致结论不成立。

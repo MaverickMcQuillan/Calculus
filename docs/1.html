@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-inputb8e73d13ccce5b22 – Calculus</title>
+<title>quarto-input9f9de7f56b394003 – Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -215,8 +215,17 @@ I(y) = \int_{a}^{+\infty}f(x,y)\, dx
 <p>也就是说，极限运算与积分运算可以交换。</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em> (<a href="#thm-consistent" class="quarto-xref">Theorem&nbsp;1</a><a href="#连续性定理">连续性定理</a>). </span>因为 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y) \, dx\)</span> 在 <span class="math inline">\(\displaystyle [c,d]\)</span> 上一致收敛，那么由 <a href="#lem-Cauchy" class="quarto-xref">Lemma&nbsp;1</a> 知</p>
+<p><span class="proof-title"><em>Proof</em> (<a href="#thm-consistent" class="quarto-xref">Theorem&nbsp;1</a><a href="#连续性定理">连续性定理</a>). </span>因为 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y) \, dx\)</span> 在 <span class="math inline">\(\displaystyle [c,d]\)</span> 上一致收敛，那么由 <a href="#lem-Cauchy" class="quarto-xref">Lemma&nbsp;1</a> 知 <span class="math inline">\(\displaystyle \sum_{n=1}^{\infty} u_n(y)\)</span> 在 <span class="math inline">\(\displaystyle [c,d]\)</span> 上一致收敛。由于 <span class="math inline">\(\displaystyle f(x,y)\)</span> 在 <span class="math inline">\(\displaystyle [a_{n-1},a_{n}] \times [c,d]\)</span> 上连续， 那么由常义含参变量积分的连续性定理知</p>
+<p><span class="math display">\[
+u_{n}(y)=\int_{a_{n-1}}^{a_{n}}f(x,y)\,dx
+\]</span></p>
+<p>连续 <span class="math inline">\(\displaystyle (n=1,2,...)\)</span>. 根据一致连续收敛级数的性质就知道和函数</p>
+<p><span class="math display">\[
+I(y) = \int_{a}^{+\infty} f(x,y)dx = \sum_{n=1}^{\infty}u_{n}(y)
+\]</span></p>
+<p>连续。</p>
 </div>
+<p>注意，Dini定理并不是这个定理的逆定理。Dini 定理只说明了在 <span class="math inline">\(\displaystyle f(x,y)\)</span> 保持定号 的情况下，由 <span class="math inline">\(\displaystyle I(y)=\int_{a}^{+\infty}f(x,y)\,dx\)</span> 的连续性可以推出 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y)dx\)</span> 的一致收敛性。读者可以举例说明：去掉“保持定号”条件可能导致结论不成立。</p>
 
 
 </section>
