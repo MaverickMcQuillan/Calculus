@@ -69,3 +69,34 @@ $$
 注意，Dini定理并不是这个定理的逆定理。Dini 定理只说明了在 $\displaystyle f(x,y)$ 保持定号
 的情况下，由 $\displaystyle I(y)=\int_{a}^{+\infty}f(x,y)\,dx$ 的连续性可以推出 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$
 的一致收敛性。读者可以举例说明：去掉“保持定号”条件可能导致结论不成立。
+
+::: {#thm-积分次序交换定理}
+
+# 积分次序交换定理
+
+设 $\displaystyle f(x,y)$ 在 $\displaystyle [a,+\infty] \times [c,d]$ 上连续，
+$\displaystyle \int_{a}^{+\infty}f(x,y)dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$
+上一致收敛，则
+
+$$
+\int_{c}^{d}dy\int_{a}^{+\infty}f(x,y)dx = \int_{a}^{+\infty}dx\int_{c}^{d}f(x,y)dy,
+$$
+
+即积分次序可交换.
+:::
+
+::: {.proof}
+
+由 @lem-Cauchy 知 $\displaystyle \sum_{n=1}^{\infty}u_{n}(y)$ 在 $\displaystyle [c,d]$ 
+上一致收敛。根据一致收敛级数的和号与积分号可以交换的结论得
+
+\begin{align}
+
+\int_{c}^{d}dy\int_{a}^{+\infty}f(x,y)dx &= \int_{c}^{d}(\sum_{n=1}^{\infty}u_{n}(y))dy=\sum_{n=1}^{\infty}\int_{c}^{d}u_{n}(y)dy \\
+&= \sum_{n=1}^{\infty}\int_{c}^{d}(\int_{a_{n-1}}^{a_{n}}f(x,y)dx)dy = \sum_{n=1}^{\infty}\int_{c}^{d}dy\int_{a_{n-1}}^{a_{n}}f(x,y)dx \\
+&= \sum_{n=1}^{\infty}\int_{a_{n-1}}^{a_{n}}dx\int_{c}^{d}f(x,y)dy = \int_{a}^{+\infty}dx\int_{c}^{d}f(x,y)dy.
+
+\end{align}
+
+其中第三行到第四行的推到利用了常义含参变量积分的积分次序可交换定理.
+:::
