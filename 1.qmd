@@ -98,5 +98,34 @@ $$
 
 \end{align}
 
-其中第三行到第四行的推到利用了常义含参变量积分的积分次序可交换定理.
+其中第二行到第三行的推到利用了常义含参变量积分的积分次序可交换定理.
+:::
+
+当 $\displaystyle [c,d]$ 也改为无穷区间 $\displaystyle [c,+\infty)$ 时，本定理的条件就不足以保证积分次序可交换，但有下面的结论：
+
+::: {#thm-积分次序交换定理2}
+
+# 积分次序交换定理2
+
+设 $\displaystyle f(x,y)$ 在 $\displaystyle [a,+\infty) \times [c,+\infty)$ 上连续，且 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$
+关于 $\displaystyle y$ 在 $\displaystyle [c,C]$ 上一致收敛 $\displaystyle (c<C<+\infty)$ ， $\displaystyle \int_{c}^{+\infty}f(x,y)dy$
+关于 $\displaystyle x$ 在 $\displaystyle [a,A]$ 上一致收敛 $\displaystyle (a<A<+\infty)$.
+进一步假设 $\displaystyle \int_{a}^{+\infty}dx\int_{c}^{+\infty} \left| f(x,y) \right | dy$ 和 $\displaystyle \int_{c}^{+\infty}dy \int_{a}^{+\infty} \left| f(x,y) \right | dx$
+中有一个存在，那么
+
+$$
+\int_{c}^{+\infty}dy\int_{a}^{+\infty}f(x,y)dx = \int_{a}^{+\infty}dx\int_{c}^{+\infty}f(x,y)dy.
+$$
+
+这个定理的证明较为复杂，这里从略。
+:::
+
+
+::: {#thm-积分号下求导定理}
+
+# 积分号下求导定理
+设 $\displaystyle f(x,y),f_{y}(x,y)$ 都在 $\displaystyle [a,+\infty) \times [c,d]$
+上连续，且 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$ 对于每个 $\displaystyle y \in [c,d]$ 收敛。
+
+
 :::

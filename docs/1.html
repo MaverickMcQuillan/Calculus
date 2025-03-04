@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-input531b6951ce8b96cd – Calculus</title>
+<title>quarto-inputb0476e601d571810 – Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -242,7 +242,18 @@ I(y) = \int_{a}^{+\infty} f(x,y)dx = \sum_{n=1}^{\infty}u_{n}(y)
 &amp;= \sum_{n=1}^{\infty}\int_{a_{n-1}}^{a_{n}}dx\int_{c}^{d}f(x,y)dy = \int_{a}^{+\infty}dx\int_{c}^{d}f(x,y)dy.
 
 \end{align}\]</span></p>
-<p>其中第三行到第四行的推到利用了常义含参变量积分的积分次序可交换定理.</p>
+<p>其中第二行到第三行的推到利用了常义含参变量积分的积分次序可交换定理.</p>
+</div>
+<p>当 <span class="math inline">\(\displaystyle [c,d]\)</span> 也改为无穷区间 <span class="math inline">\(\displaystyle [c,+\infty)\)</span> 时，本定理的条件就不足以保证积分次序可交换，但有下面的结论：</p>
+<div id="thm-积分次序交换定理2" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (积分次序交换定理2)</strong></span> 设 <span class="math inline">\(\displaystyle f(x,y)\)</span> 在 <span class="math inline">\(\displaystyle [a,+\infty) \times [c,+\infty)\)</span> 上连续，且 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y)dx\)</span> 关于 <span class="math inline">\(\displaystyle y\)</span> 在 <span class="math inline">\(\displaystyle [c,C]\)</span> 上一致收敛 <span class="math inline">\(\displaystyle (c&lt;C&lt;+\infty)\)</span> ， <span class="math inline">\(\displaystyle \int_{c}^{+\infty}f(x,y)dy\)</span> 关于 <span class="math inline">\(\displaystyle x\)</span> 在 <span class="math inline">\(\displaystyle [a,A]\)</span> 上一致收敛 <span class="math inline">\(\displaystyle (a&lt;A&lt;+\infty)\)</span>. 进一步假设 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}dx\int_{c}^{+\infty} \left| f(x,y) \right | dy\)</span> 和 <span class="math inline">\(\displaystyle \int_{c}^{+\infty}dy \int_{a}^{+\infty} \left| f(x,y) \right | dx\)</span> 中有一个存在，那么</p>
+<p><span class="math display">\[
+\int_{c}^{+\infty}dy\int_{a}^{+\infty}f(x,y)dx = \int_{a}^{+\infty}dx\int_{c}^{+\infty}f(x,y)dy.
+\]</span></p>
+<p>这个定理的证明较为复杂，这里从略。</p>
+</div>
+<div id="thm-积分号下求导定理" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (积分号下求导定理)</strong></span> 设 <span class="math inline">\(\displaystyle f(x,y),f_{y}(x,y)\)</span> 都在 <span class="math inline">\(\displaystyle [a,+\infty) \times [c,d]\)</span> 上连续，且 <span class="math inline">\(\displaystyle \int_{a}^{+\infty}f(x,y)dx\)</span> 对于每个 <span class="math inline">\(\displaystyle y \in [c,d]\)</span> 收敛。</p>
 </div>
 
 
