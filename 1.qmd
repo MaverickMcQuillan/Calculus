@@ -125,7 +125,40 @@ $$
 
 # 积分号下求导定理
 设 $\displaystyle f(x,y),f_{y}(x,y)$ 都在 $\displaystyle [a,+\infty) \times [c,d]$
-上连续，且 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$ 对于每个 $\displaystyle y \in [c,d]$ 收敛。
+上连续，且 $\displaystyle \int_{a}^{+\infty}f(x,y)dx$ 对于每个 $\displaystyle y \in [c,d]$ 收敛。进一步假设 $\displaystyle \int_{a}^{+\infty}f_{y}(x,y)dx$ 关于 $\displaystyle y$ 在 $\displaystyle [c,d]$ 上一致收敛。则 $\displaystyle I(y)=\int_{a}^{+\infty}f(x,y)dx$ 在 $\displaystyle [c,d]$ 上可导，并且在 $\displaystyle [c,d]$ 上成立
 
+$$
+I'(y) = \int_{a}^{+\infty}f_{y}(x,y)dx,
+$$
 
+即
+
+$$
+\frac{d}{dy}\int_{a}^{+\infty}f(x,y)dx = \int_{a}^{+\infty}\frac{\partial}{\partial y}f(x,y)dx,
+$$
+
+也就是说，求导运算与积分运算可交换。
+
+:::
+
+::: {.proof}
+
+记 $\displaystyle \varphi(y) = \int_{a}^{+\infty}f_{y}(x,y)dx$, 由 $\displaystyle \int_{a}^{+\infty}f_{y}(x,y)dx$ 在 $\displaystyle [c,d]$ 上一致收敛的假设知 $\displaystyle \varphi(y)$ 在 $\displaystyle [c,d]$ 上连续。于是对于 $\displaystyle y \in [c,d]$, 由 @thm-积分次序交换定理 得
+
+\begin{align}
+\int_{c}^{y}\varphi(z)dz &= \int_{c}^{y}dz\int_{a}^{+\infty}f_{z}(x,z)dx = \int_{a}^{+\infty}dx\int_{c}^{y}f_{z}(x,z)dz \\
+&= \int_{a}^{+\infty}[f(x,y)-f(x,c)]dx = \int_{a}^{+\infty}f(x,y)dx - \int_{a}^{+\infty}f(x,c)dx \\
+&= I(y) - I(c).
+\end{align}
+
+由于 $\displaystyle \varphi(y)$ 在 $\displaystyle [c,d]$ 上连续，所以函数 $\displaystyle \int_{c}^{y}\varphi(z)dz$ 可导，从而 $\displaystyle I(y)$ 可导。两边求导就得
+
+$$
+I'(y) = \varphi(y) = \int_{a}^{+\infty}f_{y}(x,y)dx.
+$$
+
+:::
+
+::: {.callout-warning}
+如果把含参变量反常积分看成是一个**函数**的话，那么 @thm-积分号下求导定理 告诉我们其导数也是一个含参变量反常积分。
 :::
