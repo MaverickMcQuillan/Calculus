@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Euler积分",
     "section": "",
-    "text": "About this site"
+    "text": "Euler积分\n\n\nBeta函数\n行如 \\[\nB(p,q)= \\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\n\\]\n的含参变量积分称为 Beta 函数，或第一类Euler 积分。\n先看它的定义域。将 Beta 函数写成\n\\[\nB(p,q)=\\int_{0}^{\\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx+\\int_{\\frac{1}{2}}^{1}x^{p-1}(1-x)^{q-1}dx,\n\\]\n当 \\(\\displaystyle x \\to 0\\) 时， \\(\\displaystyle x^{p-1}(1-x)^{q-1} \\sim x^{p-1}\\)， 所以只有当 \\(\\displaystyle p&gt;0\\) 时右边第一个反常积分收敛。而当 \\(\\displaystyle x \\to 1\\) 时， \\(\\displaystyle x^{p-1}(1-x)^{q-1} \\sim (1-x)^{q-1}\\) ， 所以只有当 \\(\\displaystyle q&gt;0\\) 时右边第二个反常积分收敛。这说明了 \\(\\displaystyle \\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\\) 对于每对 \\(\\displaystyle (p,q)\\in (0,+\\infty)\\times (0,+\\infty)\\) 收敛，即 Beta 函数 \\(\\displaystyle B(p,q)\\) 的定义域为 \\(\\displaystyle (0,+\\infty)\\times (0,+\\infty)\\).\n下面叙述 Beta 函数的性质.\n\n连续性：\\(\\displaystyle B(p,q)\\) 在 \\(\\displaystyle (0,+\\infty) \\times (0,+\\infty)\\) 上连续.\n\n\nProof. 对于任意固定的 \\(\\displaystyle p_{0}&gt;0, q_{0}&gt;0\\), 当 \\(\\displaystyle p \\geq p_{0}, q \\geq q_{0}\\) 时，"
   },
   {
     "objectID": "index.html",

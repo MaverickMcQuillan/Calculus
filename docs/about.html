@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Calculus</title>
+<title>about – Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -94,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Euler积分</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./1.html"> 
@@ -111,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,34 +171,46 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#euler积分" id="toc-euler积分" class="nav-link active" data-scroll-target="#euler积分">Euler积分</a></li>
+  <li><a href="#beta函数" id="toc-beta函数" class="nav-link" data-scroll-target="#beta函数">Beta函数</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
+
+
+
+<section id="euler积分" class="level1">
+<h1>Euler积分</h1>
+</section>
+<section id="beta函数" class="level1">
+<h1>Beta函数</h1>
+<p>行如 <span class="math display">\[
+B(p,q)= \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx
+\]</span></p>
+<p>的含参变量积分称为 <strong>Beta 函数</strong>，或<strong>第一类Euler 积分</strong>。</p>
+<p>先看它的定义域。将 Beta 函数写成</p>
+<p><span class="math display">\[
+B(p,q)=\int_{0}^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx+\int_{\frac{1}{2}}^{1}x^{p-1}(1-x)^{q-1}dx,
+\]</span></p>
+<p>当 <span class="math inline">\(\displaystyle x \to 0\)</span> 时， <span class="math inline">\(\displaystyle x^{p-1}(1-x)^{q-1} \sim x^{p-1}\)</span>， 所以只有当 <span class="math inline">\(\displaystyle p&gt;0\)</span> 时右边第一个反常积分收敛。而当 <span class="math inline">\(\displaystyle x \to 1\)</span> 时， <span class="math inline">\(\displaystyle x^{p-1}(1-x)^{q-1} \sim (1-x)^{q-1}\)</span> ， 所以只有当 <span class="math inline">\(\displaystyle q&gt;0\)</span> 时右边第二个反常积分收敛。这说明了 <span class="math inline">\(\displaystyle \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\)</span> 对于每对 <span class="math inline">\(\displaystyle (p,q)\in (0,+\infty)\times (0,+\infty)\)</span> 收敛，即 Beta 函数 <span class="math inline">\(\displaystyle B(p,q)\)</span> 的定义域为 <span class="math inline">\(\displaystyle (0,+\infty)\times (0,+\infty)\)</span>.</p>
+<p>下面叙述 Beta 函数的性质.</p>
+<ol type="1">
+<li><strong>连续性</strong>：<span class="math inline">\(\displaystyle B(p,q)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty) \times (0,+\infty)\)</span> 上连续.</li>
+</ol>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>对于任意固定的 <span class="math inline">\(\displaystyle p_{0}&gt;0, q_{0}&gt;0\)</span>, 当 <span class="math inline">\(\displaystyle p \geq p_{0}, q \geq q_{0}\)</span> 时，</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>About this site</p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
