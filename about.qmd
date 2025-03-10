@@ -103,7 +103,7 @@ $$
 行如
 
 $$
-\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}d
+\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}dx
 $$
 
 的含参变量积分称为**Gamma函数**，或**第二类 Euler积分**.
@@ -121,10 +121,152 @@ $$
 1. **连续性与可导性**：$\displaystyle \Gamma(s)$ 在 $\displaystyle (0,+\infty)$ 上连续且可导.
 
 ::: {.proof}
-对于任意闭区间 $\displaystyle [a.b] \subset (0,+\infty) $, 当 $\displaystyle s \in [a,b]$ 时成立
+
+对于任意闭区间 $\displaystyle[a,b] \subset (0,+\infty)$ , 当 $\displaystyle s \in [a,b]$ 时成立
 
 $$
 x^{s-1}e^{-x} \leq x^{a-1}e^{-x}, \quad x \in (0,1],
 $$
 
+而 $\displaystyle \int_{0}^{1}x^{a-1}e^{-x}dx$ 收敛，由 Weierstrass 判别法，$\displaystyle \int_{0}^{1}x^{s-1}e^{-x}dx$ 关于 $\displaystyle s$ 在 $\displaystyle [a,b]$ 上一致收敛. 又由于当 $\displaystyle s \in [a,b]$ 时成立
+
+$$
+x^{s-1}e^{-x} \leq x^{b-1}e^{-x}, \quad x \in [1,+\infty),
+$$
+
+而 $\displaystyle \int_{1}^{+\infty}x^{b-1}e^{-x}$ 收敛，由 Weierstrass 判别法，$\displaystyle \int_{1}^{+\infty}x^{s-1}e^{-x}dx$ 关于 $\displaystyle s$ 在 $\displaystyle [a,b]$ 上一致收敛.
+
+于是 $\displaystyle \Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}dx$ 关于 $\displaystyle s$ 在 $\displaystyle [a,b]$ 上一致收敛，从而 $\displaystyle \Gamma(s)$ 在 $\displaystyle [a,b]$ 上连续. 由区间 $\displaystyle [a,b]$ 的任意性知 $\displaystyle \Gamma(s)$ 在 $\displaystyle (0,+\infty)$ 上连续.
+
+用同样方法可以证明对于任意闭区间 $\displaystyle [a,b] \subset (0,+\infty)$,
+
+$$
+\int_{0}^{+\infty}\frac{\partial}{\partial s}(x^{s-1}e^{-x})dx = \int_{0}^{+\infty}x^{s-1}e^{-x}\ln{x}dx
+$$
+
+关于 $\displaystyle s$ 在 $\displaystyle [a,b]$ 上一致收敛，于是利用积分号下求导的定理得到 $\displaystyle \Gamma(s)$ 在 $\displaystyle [a,b]$ 上可导,且
+
+$$
+\Gamma^{'}(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}\ln{x}dx, \quad s>0.
+$$
+
+事实上，仿照以上的方法还可得到 $\Gamma(s)$ 在 $\displaystyle (0,+\infty)$ 上任意阶可导，且成立
+
+$$
+\Gamma^{(n)}(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}(\ln x)^{n}dx, \quad s>0.
+$$
+
 :::
+
+2. **递推公式**：$\displaystyle \Gamma(s)$ 满足
+
+$$
+\Gamma(s+1)=s\Gamma(s), \quad s>0.
+$$
+
+::: {.proof}
+利用分部积分法即得到
+
+$$
+\Gamma(s+1) = \int_{0}^{+\infty}x^{s}e^{-x}dx = - \int_{0}^{+\infty}x^{s}de^{-x} = -x^{s}e^{-x} \Big|_{0}^{+\infty} + s\int_{0}^{+\infty}x^{s-1}e^{-x}dx = s\Gamma(s).
+$$
+
+:::
+
+特别得，当 $\displaystyle s=n$ 为正整数时，
+
+$$
+\Gamma(n+1)=n\Gamma(n)=n(n-1)\Gamma(n-1)=\dot=n! \Gamma(1),
+$$
+
+而 $\displaystyle \Gamma(1)=\int_{0}^{+\infty}e^{-x}dx=1$, 所以
+
+$$
+\Gamma(n+1)=n!.
+$$
+
+因而 Gamma函数可以说时阶乘的推广.
+
+由于 $\displaystyle \Gamma(s)=\frac{\Gamma(s+1)}{s}$ 以及 $\displaystyle \Gamma(1)=1$, 所以
+
+$$
+\lim_{s \to 0^{+}} \Gamma(s)= +\infty.
+$$
+
+3. **其他表示：**
+
+(1) 在 $\displaystyle \Gamma(s)$ 的表示式中作变量代换 $\displaystyle x=t^{2}$, 那么
+
+$$
+\Gamma(x)=2\int_{0}^{+\infty}t^{2s-1}e^{-t^{2}}dt.
+$$
+
+据此可知
+
+$$
+\Gamma(\frac{1}{2})=2\int_{0}^{+\infty}e^{-t^{2}}dt = \sqrt{\pi}
+$$
+
+(2) 作变量代换 $\displaystyle x=\alpha t(\alpha >0)$ 可得
+
+$$
+\Gamma(s)= \alpha^{s}\int_{0}^{+\infty}t^{s-1}e^{- \alpha t}dt.
+$$
+
+4. **定义域的延拓：**
+
+由于等式
+
+$$
+\Gamma(s)=\frac{\Gamma(s+1)}{s}
+$$
+
+的右边在 $\displaystyle (-1,0)$ 上有意义，则可以应用上式来定义左边函数 $\displaystyle \Gamma(s)$ 在 $\displaystyle (-1,0)$ 上的值. 用同样的方法，再利用 $\displaystyle \Gamma(s)$ 已在 $\displaystyle (-1,0)$ 上定义的值，定义 $\displaystyle \Gamma(s)$ 在 $\displaystyle (-2,1)$ 上的值. 如此继续下去，就可以把 $\displaystyle \Gamma(s)$ 的定义域延拓到
+
+$$
+(-\infty,+\infty) \setminus \{0,-1,-2,-3,\dots\}
+$$
+
+上去. $\displaystyle \Gamma(s)$ 的图像如图所示.易证明 $\displaystyle \lim_{s \to +\infty}\Gamma(s) = +\infty$.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "Gamma function"
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import gamma
+
+# 定义奇点之间的区间
+intervals = [(-10, -9), (-9, -8), (-8, -7), (-7, -6), (-6, -5),
+             (-5, -4), (-4, -3), (-3, -2), (-2, -1), (-1, 0), (0, 10)]
+
+# 定义绘制单个区间的函数
+def plot_interval(ax, start, end, num_points=100):
+    x = np.linspace(start, end, num_points)
+    y = gamma(x)
+    ax.plot(x, y, 'b-')
+
+# 创建图像
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# 绘制每个区间
+for (start, end) in intervals:
+    plot_interval(ax, start + 0.01, end - 0.01)  # 稍微偏移以避开奇点
+
+# 设置标签和标题
+ax.set_xlabel(r'$x$')
+ax.set_ylabel(r'$\Gamma(x)$')
+
+
+# 设置坐标范围
+ax.set_xlim(-10, 10)
+ax.set_ylim(-10, 10)
+
+# 添加网格和坐标轴
+ax.grid(True)
+ax.axhline(0, color='black', linewidth=0.5)
+ax.axvline(0, color='black', linewidth=0.5)
+
+plt.show()
+```

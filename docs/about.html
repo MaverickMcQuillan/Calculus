@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -140,7 +174,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Euler积分</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,21 +210,33 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#euler积分" id="toc-euler积分" class="nav-link active" data-scroll-target="#euler积分">Euler积分</a></li>
-  <li><a href="#beta函数" id="toc-beta函数" class="nav-link" data-scroll-target="#beta函数">Beta函数</a></li>
+  <li><a href="#beta函数" id="toc-beta函数" class="nav-link active" data-scroll-target="#beta函数">Beta函数</a></li>
   <li><a href="#gamma函数" id="toc-gamma函数" class="nav-link" data-scroll-target="#gamma函数">Gamma函数</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Euler积分</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="euler积分" class="level1">
-<h1>Euler积分</h1>
-</section>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="beta函数" class="level1">
 <h1>Beta函数</h1>
 <p>行如 <span class="math display">\[
@@ -271,7 +317,7 @@ B(p,q)=\int_{0}^{1}\frac{t^{p-1}+t^{q-1}}{(1+t)^{p+q}}dt(=B(q,p)).
 <h1>Gamma函数</h1>
 <p>行如</p>
 <p><span class="math display">\[
-\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}d
+\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}dx
 \]</span></p>
 <p>的含参变量积分称为<strong>Gamma函数</strong>，或<strong>第二类 Euler积分</strong>.</p>
 <p>先看它的定义域.将 Gamma函数写成</p>
@@ -284,10 +330,134 @@ B(p,q)=\int_{0}^{1}\frac{t^{p-1}+t^{q-1}}{(1+t)^{p+q}}dt(=B(q,p)).
 <li><strong>连续性与可导性</strong>：<span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty)\)</span> 上连续且可导.</li>
 </ol>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>对于任意闭区间 $(0,+) $, 当 <span class="math inline">\(\displaystyle s \in [a,b]\)</span> 时成立</p>
+<p><span class="proof-title"><em>Proof</em>. </span>对于任意闭区间 <span class="math inline">\(\displaystyle[a,b] \subset (0,+\infty)\)</span> , 当 <span class="math inline">\(\displaystyle s \in [a,b]\)</span> 时成立</p>
 <p><span class="math display">\[
 x^{s-1}e^{-x} \leq x^{a-1}e^{-x}, \quad x \in (0,1],
 \]</span></p>
+<p>而 <span class="math inline">\(\displaystyle \int_{0}^{1}x^{a-1}e^{-x}dx\)</span> 收敛，由 Weierstrass 判别法，<span class="math inline">\(\displaystyle \int_{0}^{1}x^{s-1}e^{-x}dx\)</span> 关于 <span class="math inline">\(\displaystyle s\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上一致收敛. 又由于当 <span class="math inline">\(\displaystyle s \in [a,b]\)</span> 时成立</p>
+<p><span class="math display">\[
+x^{s-1}e^{-x} \leq x^{b-1}e^{-x}, \quad x \in [1,+\infty),
+\]</span></p>
+<p>而 <span class="math inline">\(\displaystyle \int_{1}^{+\infty}x^{b-1}e^{-x}\)</span> 收敛，由 Weierstrass 判别法，<span class="math inline">\(\displaystyle \int_{1}^{+\infty}x^{s-1}e^{-x}dx\)</span> 关于 <span class="math inline">\(\displaystyle s\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上一致收敛.</p>
+<p>于是 <span class="math inline">\(\displaystyle \Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}dx\)</span> 关于 <span class="math inline">\(\displaystyle s\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上一致收敛，从而 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上连续. 由区间 <span class="math inline">\(\displaystyle [a,b]\)</span> 的任意性知 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty)\)</span> 上连续.</p>
+<p>用同样方法可以证明对于任意闭区间 <span class="math inline">\(\displaystyle [a,b] \subset (0,+\infty)\)</span>,</p>
+<p><span class="math display">\[
+\int_{0}^{+\infty}\frac{\partial}{\partial s}(x^{s-1}e^{-x})dx = \int_{0}^{+\infty}x^{s-1}e^{-x}\ln{x}dx
+\]</span></p>
+<p>关于 <span class="math inline">\(\displaystyle s\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上一致收敛，于是利用积分号下求导的定理得到 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle [a,b]\)</span> 上可导,且</p>
+<p><span class="math display">\[
+\Gamma^{'}(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}\ln{x}dx, \quad s&gt;0.
+\]</span></p>
+<p>事实上，仿照以上的方法还可得到 <span class="math inline">\(\Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty)\)</span> 上任意阶可导，且成立</p>
+<p><span class="math display">\[
+\Gamma^{(n)}(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}(\ln x)^{n}dx, \quad s&gt;0.
+\]</span></p>
+</div>
+<ol start="2" type="1">
+<li><strong>递推公式</strong>：<span class="math inline">\(\displaystyle \Gamma(s)\)</span> 满足</li>
+</ol>
+<p><span class="math display">\[
+\Gamma(s+1)=s\Gamma(s), \quad s&gt;0.
+\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>利用分部积分法即得到</p>
+<p><span class="math display">\[
+\Gamma(s+1) = \int_{0}^{+\infty}x^{s}e^{-x}dx = - \int_{0}^{+\infty}x^{s}de^{-x} = -x^{s}e^{-x} \Big|_{0}^{+\infty} + s\int_{0}^{+\infty}x^{s-1}e^{-x}dx = s\Gamma(s).
+\]</span></p>
+</div>
+<p>特别得，当 <span class="math inline">\(\displaystyle s=n\)</span> 为正整数时，</p>
+<p><span class="math display">\[
+\Gamma(n+1)=n\Gamma(n)=n(n-1)\Gamma(n-1)=\dot=n! \Gamma(1),
+\]</span></p>
+<p>而 <span class="math inline">\(\displaystyle \Gamma(1)=\int_{0}^{+\infty}e^{-x}dx=1\)</span>, 所以</p>
+<p><span class="math display">\[
+\Gamma(n+1)=n!.
+\]</span></p>
+<p>因而 Gamma函数可以说时阶乘的推广.</p>
+<p>由于 <span class="math inline">\(\displaystyle \Gamma(s)=\frac{\Gamma(s+1)}{s}\)</span> 以及 <span class="math inline">\(\displaystyle \Gamma(1)=1\)</span>, 所以</p>
+<p><span class="math display">\[
+\lim_{s \to 0^{+}} \Gamma(s)= +\infty.
+\]</span></p>
+<ol start="3" type="1">
+<li><strong>其他表示：</strong></li>
+</ol>
+<ol type="1">
+<li>在 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 的表示式中作变量代换 <span class="math inline">\(\displaystyle x=t^{2}\)</span>, 那么</li>
+</ol>
+<p><span class="math display">\[
+\Gamma(x)=2\int_{0}^{+\infty}t^{2s-1}e^{-t^{2}}dt.
+\]</span></p>
+<p>据此可知</p>
+<p><span class="math display">\[
+\Gamma(\frac{1}{2})=2\int_{0}^{+\infty}e^{-t^{2}}dt = \sqrt{\pi}
+\]</span></p>
+<ol start="2" type="1">
+<li>作变量代换 <span class="math inline">\(\displaystyle x=\alpha t(\alpha &gt;0)\)</span> 可得</li>
+</ol>
+<p><span class="math display">\[
+\Gamma(s)= \alpha^{s}\int_{0}^{+\infty}t^{s-1}e^{- \alpha t}dt.
+\]</span></p>
+<ol start="4" type="1">
+<li><strong>定义域的延拓：</strong></li>
+</ol>
+<p>由于等式</p>
+<p><span class="math display">\[
+\Gamma(s)=\frac{\Gamma(s+1)}{s}
+\]</span></p>
+<p>的右边在 <span class="math inline">\(\displaystyle (-1,0)\)</span> 上有意义，则可以应用上式来定义左边函数 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (-1,0)\)</span> 上的值. 用同样的方法，再利用 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 已在 <span class="math inline">\(\displaystyle (-1,0)\)</span> 上定义的值，定义 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (-2,1)\)</span> 上的值. 如此继续下去，就可以把 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 的定义域延拓到</p>
+<p><span class="math display">\[
+(-\infty,+\infty) \setminus \{0,-1,-2,-3,\dots\}
+\]</span></p>
+<p>上去. <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 的图像如图所示.易证明 <span class="math inline">\(\displaystyle \lim_{s \to +\infty}\Gamma(s) = +\infty\)</span>.</p>
+<div id="cell-fig-polar" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> gamma</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义奇点之间的区间</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>intervals <span class="op">=</span> [(<span class="op">-</span><span class="dv">10</span>, <span class="op">-</span><span class="dv">9</span>), (<span class="op">-</span><span class="dv">9</span>, <span class="op">-</span><span class="dv">8</span>), (<span class="op">-</span><span class="dv">8</span>, <span class="op">-</span><span class="dv">7</span>), (<span class="op">-</span><span class="dv">7</span>, <span class="op">-</span><span class="dv">6</span>), (<span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">5</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             (<span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">4</span>), (<span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">3</span>), (<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">2</span>), (<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>), (<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">10</span>)]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义绘制单个区间的函数</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_interval(ax, start, end, num_points<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(start, end, num_points)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> gamma(x)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, <span class="st">'b-'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建图像</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制每个区间</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (start, end) <span class="kw">in</span> intervals:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    plot_interval(ax, start <span class="op">+</span> <span class="fl">0.01</span>, end <span class="op">-</span> <span class="fl">0.01</span>)  <span class="co"># 稍微偏移以避开奇点</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置标签和标题</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'$x$'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'$\Gamma(x)$'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置坐标范围</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 添加网格和坐标轴</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="about_files/figure-html/fig-polar-output-1.png" width="847" height="508" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Gamma function
+</figcaption>
+</figure>
+</div>
+</div>
 </div>
 
 
