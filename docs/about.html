@@ -178,6 +178,7 @@ window.Quarto = {
   <ul>
   <li><a href="#euler积分" id="toc-euler积分" class="nav-link active" data-scroll-target="#euler积分">Euler积分</a></li>
   <li><a href="#beta函数" id="toc-beta函数" class="nav-link" data-scroll-target="#beta函数">Beta函数</a></li>
+  <li><a href="#gamma函数" id="toc-gamma函数" class="nav-link" data-scroll-target="#gamma函数">Gamma函数</a></li>
   </ul>
 </nav>
     </div>
@@ -249,8 +250,45 @@ B(p,q)=2\int_{0}^{\frac{\pi}{2}}\cos^{2p-1}\phi\sin^{2q-1}\phi d\phi.
 \]</span></p>
 <p>据此可以得到</p>
 <p><span class="math display">\[
-B(\frac{1}{2},\frac{1}{2}) = \phi .
+B(\frac{1}{2},\frac{1}{2}) = \pi .
 \]</span></p>
+<ol start="2" type="1">
+<li>作变量代换 <span class="math inline">\(\displaystyle x = \frac{1}{1+t}\)</span>,得到</li>
+</ol>
+<p><span class="math display">\[
+B(p,q)=\int_{0}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt = \int_{0}^{1}\frac{t^{q-1}}{(1+t)^{p+q}}dt + \int_{1}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt.
+\]</span></p>
+<p>在最后一个积分中再作变量代换 <span class="math inline">\(\displaystyle t=\frac{1}{u}\)</span>,得到</p>
+<p><span class="math display">\[
+\int_{1}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt = \int_{0}^{1}\frac{u^{p-1}}{(1+u)^{p+q}}du,
+\]</span></p>
+<p>于是</p>
+<p><span class="math display">\[
+B(p,q)=\int_{0}^{1}\frac{t^{p-1}+t^{q-1}}{(1+t)^{p+q}}dt(=B(q,p)).
+\]</span></p>
+</section>
+<section id="gamma函数" class="level1">
+<h1>Gamma函数</h1>
+<p>行如</p>
+<p><span class="math display">\[
+\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}d
+\]</span></p>
+<p>的含参变量积分称为<strong>Gamma函数</strong>，或<strong>第二类 Euler积分</strong>.</p>
+<p>先看它的定义域.将 Gamma函数写成</p>
+<p><span class="math display">\[
+\Gamma(s)=\int_{0}^{1}x^{s-1}e^{-x}dx + \int_{1}^{+\infty}x^{s-1}e^{-x}dx,
+\]</span></p>
+<p>由反常积分的收敛判别法，当 <span class="math inline">\(\displaystyle s \leq 0\)</span> 时，右边第一个反常积分发散，而当 <span class="math inline">\(\displaystyle s&gt;0\)</span> 时,两个反常积分都收敛,因此 Gamma函数 <span class="math inline">\(\displaystyle \Gamma(s)\)</span> 的定义域为 <span class="math inline">\(\displaystyle (0,+\infty)\)</span>.</p>
+<p>下面叙述 Gamma函数的性质.</p>
+<ol type="1">
+<li><strong>连续性与可导性</strong>：<span class="math inline">\(\displaystyle \Gamma(s)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty)\)</span> 上连续且可导.</li>
+</ol>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>对于任意闭区间 $(0,+) $, 当 <span class="math inline">\(\displaystyle s \in [a,b]\)</span> 时成立</p>
+<p><span class="math display">\[
+x^{s-1}e^{-x} \leq x^{a-1}e^{-x}, \quad x \in (0,1],
+\]</span></p>
+</div>
 
 
 </section>

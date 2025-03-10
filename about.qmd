@@ -81,4 +81,50 @@ $$
 B(\frac{1}{2},\frac{1}{2}) = \pi .
 $$
 
+(2) 作变量代换 $\displaystyle x = \frac{1}{1+t}$,得到
 
+$$
+B(p,q)=\int_{0}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt = \int_{0}^{1}\frac{t^{q-1}}{(1+t)^{p+q}}dt + \int_{1}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt.
+$$
+
+在最后一个积分中再作变量代换 $\displaystyle t=\frac{1}{u}$,得到
+
+$$
+\int_{1}^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt = \int_{0}^{1}\frac{u^{p-1}}{(1+u)^{p+q}}du,
+$$
+
+于是
+
+$$
+B(p,q)=\int_{0}^{1}\frac{t^{p-1}+t^{q-1}}{(1+t)^{p+q}}dt(=B(q,p)).
+$$
+
+# Gamma函数
+行如
+
+$$
+\Gamma(s)=\int_{0}^{+\infty}x^{s-1}e^{-x}d
+$$
+
+的含参变量积分称为**Gamma函数**，或**第二类 Euler积分**.
+
+先看它的定义域.将 Gamma函数写成
+
+$$
+\Gamma(s)=\int_{0}^{1}x^{s-1}e^{-x}dx + \int_{1}^{+\infty}x^{s-1}e^{-x}dx,
+$$
+
+由反常积分的收敛判别法，当 $\displaystyle s \leq 0$ 时，右边第一个反常积分发散，而当 $\displaystyle s>0$ 时,两个反常积分都收敛,因此 Gamma函数 $\displaystyle \Gamma(s)$ 的定义域为 $\displaystyle (0,+\infty)$.
+
+下面叙述 Gamma函数的性质.
+
+1. **连续性与可导性**：$\displaystyle \Gamma(s)$ 在 $\displaystyle (0,+\infty)$ 上连续且可导.
+
+::: {.proof}
+对于任意闭区间 $\displaystyle [a.b] \subset (0,+\infty) $, 当 $\displaystyle s \in [a,b]$ 时成立
+
+$$
+x^{s-1}e^{-x} \leq x^{a-1}e^{-x}, \quad x \in (0,1],
+$$
+
+:::
