@@ -207,7 +207,50 @@ B(p,q)=\int_{0}^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx+\int_{\frac{1}{2}}^{1}x^{p-1}(
 </ol>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>对于任意固定的 <span class="math inline">\(\displaystyle p_{0}&gt;0, q_{0}&gt;0\)</span>, 当 <span class="math inline">\(\displaystyle p \geq p_{0}, q \geq q_{0}\)</span> 时，</p>
+<p><span class="math display">\[
+x^{p-1}(1-x)^{q-1} \leq x^{p_{0}-1}(1-x)^{q_{0}-1}, \quad 0 \leq x \leq 1,
+\]</span></p>
+<p>而 <span class="math inline">\(\displaystyle \int_{0}^{1}x^{p_{0}-1}(1-x)^{q_{0}-1}\)</span> 收敛，由 Weierstrass 判别法， <span class="math inline">\(\displaystyle \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\)</span> 关于 <span class="math inline">\(\displaystyle p,q\)</span> 在 <span class="math inline">\(\displaystyle [p_{0},+\infty] \times [q_{0}, +\times)\)</span> 上一致收敛，从而 <span class="math inline">\(\displaystyle B(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\)</span> 在 <span class="math inline">\(\displaystyle [p_{0}, +\infty) \times [q_{0},+\infty)\)</span> 上连续.</p>
+<p>由 <span class="math inline">\(\displaystyle p_{0}&gt;0,q_{0}&gt;0\)</span> 的任意性得知 <span class="math inline">\(\displaystyle B(p,q)\)</span> 在 <span class="math inline">\(\displaystyle (0,+\infty) \times (0,+\infty)\)</span> 上连续.</p>
 </div>
+<ol start="2" type="1">
+<li><strong>对称性</strong>： <span class="math inline">\(\displaystyle B(p,q)=B(q,p), p&gt;0, q&gt;0.\)</span></li>
+</ol>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>作变换 <span class="math inline">\(\displaystyle x=1-t\)</span> 就得到</p>
+<p><span class="math display">\[
+B(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx = \int_{0}^{1}(1-t)^{p-1}t^{q-1}dt = B(q,p).
+\]</span></p>
+</div>
+<ol start="3" type="1">
+<li><strong>递推公式</strong>：<span class="math inline">\(\displaystyle B(p,q)=\frac{q-1}{p+q-1}B(p,q-1),p&gt;0,q&gt;1.\)</span></li>
+</ol>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>利用分部积分法得到</p>
+<p><span class="math display">\[\begin{align*}
+
+B(p,q) &amp;= \int_{0}^{1}\frac{1}{p}(1-x)^{q-1}dx^{p} = \frac{1}{p}x^{p}(1-x)^{q-1} \Big|_{0}^{1} + \frac{q-1}{p}\int_{0}^{1}x^{p}(1-x)^{q-2}dx \\
+&amp;= \frac{q-1}{p}[\int_{0}^{1}x^{p-1}(1-x)^{q-2}dx - \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx] \\
+&amp;= \frac{q-1}{p}B(p,q-1) - \frac{q-1}{p}B(p,q),
+
+\end{align*}\]</span></p>
+<p>移项整理后就得到递推公式.</p>
+<p>由 <span class="math inline">\(\displaystyle B(p,q)\)</span> 的对称性并结合递推公式可得到，当 <span class="math inline">\(\displaystyle p&gt;1, q&gt;1\)</span> 时，成立</p>
+<p><span class="math display">\[
+B(p,q)=\frac{(p-1)(q-1)}{(p+q-1)(p+q-2)}B(p-1,q-1).
+\]</span></p>
+</div>
+<ol start="4" type="1">
+<li><strong>其他表示：</strong></li>
+</ol>
+<p>(1)作变量代换 <span class="math inline">\(\displaystyle x=\cos^{2}\phi\)</span>,得到</p>
+<p><span class="math display">\[
+B(p,q)=2\int_{0}^{\frac{\pi}{2}}\cos^{2p-1}\phi\sin^{2q-1}\phi d\phi.
+\]</span></p>
+<p>据此可以得到</p>
+<p><span class="math display">\[
+B(\frac{1}{2},\frac{1}{2}) = \phi .
+\]</span></p>
 
 
 </section>

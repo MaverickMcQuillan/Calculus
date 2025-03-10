@@ -23,4 +23,62 @@ $$
 ::: {.proof}
 对于任意固定的 $\displaystyle p_{0}>0, q_{0}>0$, 当 $\displaystyle p \geq p_{0}, q \geq q_{0}$ 时，
 
+$$
+x^{p-1}(1-x)^{q-1} \leq x^{p_{0}-1}(1-x)^{q_{0}-1}, \quad 0 \leq x \leq 1,
+$$
+
+而 $\displaystyle \int_{0}^{1}x^{p_{0}-1}(1-x)^{q_{0}-1}$ 收敛，由 Weierstrass 判别法， $\displaystyle \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx$ 关于 $\displaystyle p,q$ 在 $\displaystyle [p_{0},+\infty] \times [q_{0}, +\times)$ 上一致收敛，从而 $\displaystyle B(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx$ 在 $\displaystyle [p_{0}, +\infty) \times [q_{0},+\infty)$ 上连续.
+
+由 $\displaystyle p_{0}>0,q_{0}>0$ 的任意性得知 $\displaystyle B(p,q)$ 在 $\displaystyle (0,+\infty) \times (0,+\infty)$ 上连续.
 :::
+
+2. **对称性**： $\displaystyle B(p,q)=B(q,p), p>0, q>0.$
+
+
+::: {.proof}
+作变换 $\displaystyle x=1-t$ 就得到
+
+$$
+B(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx = \int_{0}^{1}(1-t)^{p-1}t^{q-1}dt = B(q,p).
+$$
+
+:::
+
+3. **递推公式**：$\displaystyle B(p,q)=\frac{q-1}{p+q-1}B(p,q-1),p>0,q>1.$
+
+::: {.proof}
+利用分部积分法得到
+
+\begin{align*}
+
+B(p,q) &= \int_{0}^{1}\frac{1}{p}(1-x)^{q-1}dx^{p} = \frac{1}{p}x^{p}(1-x)^{q-1} \Big|_{0}^{1} + \frac{q-1}{p}\int_{0}^{1}x^{p}(1-x)^{q-2}dx \\ 
+&= \frac{q-1}{p}[\int_{0}^{1}x^{p-1}(1-x)^{q-2}dx - \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx] \\
+&= \frac{q-1}{p}B(p,q-1) - \frac{q-1}{p}B(p,q),
+
+\end{align*}
+
+移项整理后就得到递推公式.
+
+由 $\displaystyle B(p,q)$ 的对称性并结合递推公式可得到，当 $\displaystyle p>1, q>1$ 时，成立
+
+$$
+B(p,q)=\frac{(p-1)(q-1)}{(p+q-1)(p+q-2)}B(p-1,q-1).
+$$
+
+:::
+
+4. **其他表示：**
+
+(1)作变量代换 $\displaystyle x=\cos^{2}\phi$,得到
+
+$$
+B(p,q)=2\int_{0}^{\frac{\pi}{2}}\cos^{2p-1}\phi\sin^{2q-1}\phi d\phi.
+$$
+
+据此可以得到
+
+$$
+B(\frac{1}{2},\frac{1}{2}) = \pi .
+$$
+
+
