@@ -198,7 +198,7 @@ $$
 (1) 在 $\displaystyle \Gamma(s)$ 的表示式中作变量代换 $\displaystyle x=t^{2}$, 那么
 
 $$
-\Gamma(x)=2\int_{0}^{+\infty}t^{2s-1}e^{-t^{2}}dt.
+\Gamma(s)=2\int_{0}^{+\infty}t^{2s-1}e^{-t^{2}}dt.
 $$
 
 据此可知
@@ -270,3 +270,42 @@ ax.axvline(0, color='black', linewidth=0.5)
 
 plt.show()
 ```
+
+# Beta函数与Gamma函数的关系
+
+::: {#thm-Beta函数与Gamma函数之间的关系}
+# Beta函数与 Gamma函数之间的关系
+Beta 函数与 Gamma函数之间具有如下关系：
+
+$$
+B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}, \quad p>0,q>0.
+$$
+
+:::
+
+::: {.proof}
+
+由于
+
+$$
+\Gamma(p)=2\int_{0}^{+\infty}t^{2p-1}e^{-t^{2}}dt, \quad \Gamma(q)=2\int_{0}^{+\infty}t^{2q-1}e^{-t^{2}}dt,
+$$
+
+取 $\displaystyle \Omega=\{(s,t) | 0 \leq s < +\infty, 0 \leq t < +\infty \}$, 利用化反常重积分为累次重积分的方法得到
+
+$$
+\displaystyle \Gamma(p)\Gamma(q)=4\int_{0}^{+\infty}s^{2p-1}e^{-x^{2}}ds\int_{0}^{+\infty}t^{2q-1}e^{-t^{2}}dt=4 \iint\limits_{\Omega} s^{2p-1}e^{-x^{2}}t^{2q-1}e^{-t^{2}}dsdt.
+$$
+
+对右边的反常二重积分作极坐标变换 $\displaystyle s=r\cos\theta, t=r \sin \theta$, 即得
+
+\begin{align}
+
+\Gamma(p)\Gamma(q)&=4\iint\limits_{\substack{0\leq<+\infty \\ 0\leq \theta \leq \frac{\pi}{2}}} r^{2(p+q)-1}e^{-r^{2}}\cos^{2p-1}\theta\sin^{2q-1}\theta drd\theta \\ 
+&= (2\int_{0}^{\frac{\pi}{2}}\cos^{2p-1}\theta\sin^{2q-1}\theta d\theta)(2\int_{0}^{+\infty}r^{2(p+q)-1}e^{-r^{2}}dr) \\
+&= B(p,q)\Gamma(p+q).
+
+
+\end{align}
+
+:::
