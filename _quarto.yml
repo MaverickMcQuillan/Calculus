@@ -19,6 +19,7 @@ website:
         contents:
           - 1.qmd
           - about.qmd
+          - 2.qmd
   
 format:
   html:
