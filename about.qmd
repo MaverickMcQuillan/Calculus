@@ -293,9 +293,12 @@ $$
 
 取 $\displaystyle \Omega=\{(s,t) | 0 \leq s < +\infty, 0 \leq t < +\infty \}$, 利用化反常重积分为累次重积分的方法得到
 
-$$
-\displaystyle \Gamma(p)\Gamma(q)=4\int_{0}^{+\infty}s^{2p-1}e^{-x^{2}}ds\int_{0}^{+\infty}t^{2q-1}e^{-t^{2}}dt=4 \iint\limits_{\Omega} s^{2p-1}e^{-x^{2}}t^{2q-1}e^{-t^{2}}dsdt.
-$$
+\begin{align}
+
+\displaystyle \Gamma(p)\Gamma(q)&=4\int_{0}^{+\infty}s^{2p-1}e^{-x^{2}}ds\int_{0}^{+\infty}t^{2q-1}e^{-t^{2}}dt  \\
+&=4 \iint\limits_{\Omega} s^{2p-1}e^{-x^{2}}t^{2q-1}e^{-t^{2}}dsdt.
+
+\end{align}
 
 对右边的反常二重积分作极坐标变换 $\displaystyle s=r\cos\theta, t=r \sin \theta$, 即得
 
@@ -307,5 +310,65 @@ $$
 
 
 \end{align}
+
+:::
+
+:::{#thm-Legendre公式}
+# Legendre公式
+
+$$
+\Gamma(s)\Gamma(s+\frac{1}{2}) = \frac{\sqrt{\pi}}{2^{2s-1}}\Gamma(2s), \quad s>0.
+$$
+
+:::
+
+:::{.proof}
+由于
+
+\begin{align}
+B(s,s) &= \int_{0}^{1}x^{s-1}(1-x)^{s-1}dx = \int_{0}^{1}[\frac{1}{4}-(\frac{1}{2}-x)^{2}]^{s-1}dx \\
+&= 2 \int_{0}^{\frac{1}{2}}[\frac{1}{4}-(\frac{1}{2}-x)^{2}]^{s-1}dx,
+\end{align}
+
+作变量代换 $\displaystyle \frac{1}{2}-x=\frac{1}{2}\sqrt{t}$, 得到
+
+$$
+B(s,s)=\frac{1}{2^{2s-1}}\int_{0}^{1}(1-t)^{s-1}t^{-\frac{1}{2}}dt=\frac{1}{2^{2s-1}}B(\frac{1}{2},s).
+$$
+
+利用Beta函数与 Gamma函数的关系，从上式得
+
+$$
+\frac{\Gamma(s)\Gamma(s)}{\Gamma(2s)} = \frac{1}{2^{2s-1}}\frac{\Gamma(\frac{1}{2})\Gamma(s)}{\Gamma(s+\frac{1}{2})}=\frac{1}{2^{2s-1}}\frac{\sqrt{\pi}\Gamma(s)}{\Gamma(s+\frac{1}{2})}.
+$$
+
+整理后就得到Legendre公式.
+
+:::
+
+
+:::{#thm-余元公式}
+# 余元公式
+
+$$
+\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)}, \quad 0<s<1.
+$$
+
+:::
+
+
+:::{#thm-Stirling公式}
+# Stirling公式
+Gamma函数有如下的渐进估计：
+
+$$
+\Gamma(s+1)=\sqrt{2\pi s}(\frac{s}{e})^{s} e^{\frac{\theta}{12s}}, \quad s>0,
+$$
+
+这里 $\displaystyle 0<\theta<1$. 特别地，当 $\displaystyle s=n$ 为正整数时，
+
+$$
+n! = \sqrt{2 \pi n}(\frac{n}{e})^{n}e^{\frac{\theta}{12n}}.
+$$
 
 :::
