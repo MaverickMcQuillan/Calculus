@@ -8,15 +8,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: Euler积分
       - 1.qmd
   sidebar: 
     style: "docked"
     search: true
     contents:
-      - test: "含参变量积分"
-        href: 1.qmd
-
+      - section: "含参变量积分"
+        contents:
+          - 1.qmd
+          - about.qmd
+  
 format:
   html:
     theme:
